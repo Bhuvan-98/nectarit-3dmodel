@@ -8,10 +8,10 @@ interface IShapesListProps {
   onSelectChange: (name: string) => void;
 }
 
-export interface IShape {
+interface IShape {
   name: string;
-  icon: React.JSX.Element
-  displayName: String;
+  icon: React.JSX.Element;
+  displayName: string;
 }
 
 export default function ShapeList(props: IShapesListProps) {
@@ -22,7 +22,7 @@ export default function ShapeList(props: IShapesListProps) {
   }, [])
 
   const initShapes = () => {
-    let lShapes: IShape[] = []
+    const lShapes: IShape[] = []
     lShapes.push({
       name: "cube",
       displayName: "Cube",

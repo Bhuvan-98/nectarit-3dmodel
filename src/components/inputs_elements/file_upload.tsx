@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import './styles.css'
 
 interface IFileUploadProps {
@@ -6,7 +6,7 @@ interface IFileUploadProps {
 }
 
 export default function FileUpload(props: IFileUploadProps) {
-  const fileInputRef = useRef(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -18,7 +18,7 @@ export default function FileUpload(props: IFileUploadProps) {
       }
 
       const url = URL.createObjectURL(file);
-      props.onchangeAction(url, file.name)
+      props.onchangeAction(url, file.name);
     }
   };
 
@@ -32,6 +32,5 @@ export default function FileUpload(props: IFileUploadProps) {
         Upload
       </label>
     </span>
-
   );
 }

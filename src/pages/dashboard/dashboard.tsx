@@ -1,7 +1,7 @@
 "use client";
 import { Environment, OrbitControls,Text } from '@react-three/drei';
 import { Canvas} from '@react-three/fiber';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ModelViewer } from '@/container/3dmodel_widget/3dmodel_view'
 import { Cube } from '@/components/shapes/cube'
 import ImportList, { ILayer, IFileObject } from '@/container/importListWidget/importList';
@@ -26,12 +26,12 @@ export default function Dashboard() {
     if (name == undefined || name == null)
       return;
 
-    var idx = layers.findIndex(x => x.name == name)
+    let idx = layers.findIndex(x => x.name == name)
     if (idx == -1) {
       setLayers([...layers, { name: name, type: "shape" }])
     }
     else {
-      var lLayers = getLayers();
+      let lLayers = getLayers();
       lLayers.splice(idx, 1);
       setLayers(lLayers);
       setCubeCount(0);
@@ -50,7 +50,7 @@ export default function Dashboard() {
   }
 
   const getLayers = (): ILayer[] => {
-    var lLayers: ILayer[] = JSON.parse(JSON.stringify(layers));
+    let lLayers: ILayer[] = JSON.parse(JSON.stringify(layers));
     return lLayers;
   }
 

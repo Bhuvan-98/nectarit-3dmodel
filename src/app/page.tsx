@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import SideBar from '@/components/layouts/sideBar';
 import Dashboard from '@/pages/dashboard/dashboard';
 
