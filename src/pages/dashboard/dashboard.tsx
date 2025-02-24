@@ -26,12 +26,12 @@ export default function Dashboard() {
     if (name == undefined || name == null)
       return;
 
-    let idx = layers.findIndex(x => x.name == name)
+    const idx = layers.findIndex(x => x.name == name)
     if (idx == -1) {
       setLayers([...layers, { name: name, type: "shape" }])
     }
     else {
-      let lLayers = getLayers();
+      const lLayers = getLayers();
       lLayers.splice(idx, 1);
       setLayers(lLayers);
       setCubeCount(0);
@@ -44,13 +44,13 @@ export default function Dashboard() {
   }
 
   const handleRemoveLayer = (idx: number) => {
-    let lLayers = getLayers();
+    const lLayers = getLayers();
     lLayers.splice(idx, 1);
     setLayers(lLayers);
   }
 
   const getLayers = (): ILayer[] => {
-    let lLayers: ILayer[] = JSON.parse(JSON.stringify(layers));
+    const lLayers: ILayer[] = JSON.parse(JSON.stringify(layers));
     return lLayers;
   }
 
