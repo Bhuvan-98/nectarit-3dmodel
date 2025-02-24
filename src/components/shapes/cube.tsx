@@ -13,11 +13,10 @@ export function Cube(props: IShapeProps) {
 
     const meshRef = useRef<Mesh>(null);
     const [hovered, setHover] = useState(false);
-    const [active, setActive] = useState(false);
     useEffect(() => {
     }, [meshRef])
 
-    useFrame((state: any, delta: any) => {
+    useFrame((delta: any) => {
         if (props.rotation == "on" && meshRef.current) {
             meshRef.current.rotation.x += delta;
         }

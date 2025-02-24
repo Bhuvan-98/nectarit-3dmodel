@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Cube } from "@/components/shapes/cube"
-import { ILayer } from "../importListWidget/importList";
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Environment, OrbitControls, Html } from '@react-three/drei';
+import { Canvas} from '@react-three/fiber';
+import { Environment, OrbitControls} from '@react-three/drei';
 import './styles.css'
 
 interface IShapesListProps {

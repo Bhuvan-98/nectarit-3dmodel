@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FileUpload from "@/components/inputs_elements/file_upload";
 import './styles.css'
 
