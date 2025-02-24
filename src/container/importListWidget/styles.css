@@ -1,0 +1,26 @@
+.layer-item{
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+    justify-content: space-between;
+    background: #d75640;
+    margin: 5px 0;
+}
+
+.layer-remove{
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    color: blue;
+    margin: 0 10px;
+}
+
+.layer{
+    width: 300px;
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}

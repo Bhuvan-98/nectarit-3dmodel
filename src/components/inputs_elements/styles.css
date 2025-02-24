@@ -1,0 +1,10 @@
+.hide{
+    display: none;
+}
+
+.file-upload{
+    font-size: 0.8rem;
+    font-family: sans-serif;
+    color: blue;
+    margin: 0 10px;
+}

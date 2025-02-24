@@ -1,11 +1,12 @@
-import { useState } from "react";
-
+import { useState,useRef } from "react";
+import './styles.css'
 
 interface IFileUploadProps {
-  onchangeAction: (fileUrl: string | null) => void;
+  onchangeAction: (fileUrl: string | null,fileName : string) => void;
 }
 
 export default function FileUpload(props: IFileUploadProps) {
+  const fileInputRef = useRef(null);
   const [fileUrl, setFileUrl] = useState<string | null>(null);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,16 +20,20 @@ export default function FileUpload(props: IFileUploadProps) {
 
       const url = URL.createObjectURL(file);
       setFileUrl(url);
-      props.onchangeAction(url)
+      props.onchangeAction(url,file.name)
     }
   };
 
   return (
-
-    <div className="flex flex-col items-center">
-      <input type="file" accept=".glb,.gltf" onChange={handleFileUpload} />
-
-    </div>
+    <span className="flex flex-col items-center">
+      <input className="hide" type="file" accept=".glb,.gltf" onChange={handleFileUpload}  ref={fileInputRef}/>
+      <label
+        onClick={() => fileInputRef.current?.click()}
+        className="file-upload"
+      >
+        Upload
+      </label>
+    </span>
 
   );
 }
