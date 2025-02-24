@@ -1,14 +1,11 @@
 "use client";
-import { Environment, OrbitControls, Html, Text } from '@react-three/drei';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Environment, OrbitControls,Text } from '@react-three/drei';
+import { Canvas} from '@react-three/fiber';
 import React, { useEffect, useRef, useState } from 'react';
 import { ModelViewer } from '@/container/3dmodel_widget/3dmodel_view'
 import { Cube } from '@/components/shapes/cube'
-import FileUpload from '@/components/inputs_elements/file_upload';
-import { any } from 'three/tsl';
 import ImportList, { ILayer, IFileObject } from '@/container/importListWidget/importList';
 import ShapeList from '@/container/shapes_widget/shapes_list';
-import SideBar from '@/components/layouts/sideBar';
 
 
 
